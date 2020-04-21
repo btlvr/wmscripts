@@ -69,3 +69,15 @@ if [ ! -z "$SDIR" ]; then
 	bspc node -o $SRAT
 fi
 ```
+
+## safe transfer
+```
+focus=$(bspc query -N -n focused)
+
+if [ ! -z "$focus" ]; then
+	bspc node -d $1
+	if [ "$2" == "focus" ]; then
+		bspc node -f $focus
+	fi
+fi
+```
