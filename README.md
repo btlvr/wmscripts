@@ -81,3 +81,14 @@ if [ ! -z "$focus" ]; then
 	fi
 fi
 ```
+
+## yeet
+```
+if [ -z "$(bspc query -N -n newest.\!automatic.local)" ]; then
+	bspc node -s biggest.local
+else
+	bspc config removal_adjustment false
+	bspc node -n newest.\!automatic.local
+	bspc config removal_adjustment true
+fi
+```
